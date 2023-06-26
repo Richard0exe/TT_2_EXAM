@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\ProviderController;
+use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth','verified'])->name('dashboard');
+
+ 
+Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
+Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
 
 require __DIR__.'/auth.php';
+
