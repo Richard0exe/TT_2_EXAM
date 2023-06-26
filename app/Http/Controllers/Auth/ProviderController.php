@@ -18,15 +18,20 @@ class ProviderController extends Controller
 {
     try {
         $socialUser = Socialite::driver($provider)->user();
-        if (User::where('email', $socialUser->getEmail())->exists()) {
-            return redirect('/login')->withErrors(['email' => 'This email uses a different method to login']);
-        }
-        $user = User::where([
-            'provider' => $provider,
-            'provider_id' => $socialUser->id
-        ])->first();
-        if (!$user) {
-            $user = User::create([
+        $user = User::where('email', $socialUser->getEmail())->first();
+
+        if ($user) {
+            // User exists, associate the Google account with the existing user
+            $user->provider = $provider;
+            $user->provider_id = $socialUser->getId();
+            $user->provider_token = $socialUser->token;
+            $user->save();
+
+            Auth::login($user);
+            return redirect('/dashboard');
+        } else {
+            // User doesn't exist, create a new user record
+            $newUser = User::create([
                 'name' => $socialUser->getName(),
                 'email' => $socialUser->getEmail(),
                 'username' => User::generateUserName($socialUser->getNickName()),
@@ -35,9 +40,10 @@ class ProviderController extends Controller
                 'provider_token' => $socialUser->token,
                 'email_verified_at' => now()
             ]);
+
+            Auth::login($newUser);
+            return redirect('/dashboard');
         }
-        Auth::login($user);
-        return redirect('/dashboard');
     } catch (\Exception $e) {
         return redirect('/login');
     }
