@@ -32,7 +32,7 @@ Route::put('profile', [ProfileController::class, 'update'])->name('profile.updat
 Route::resource('tasks', TaskController::class);
 });
 
- 
+
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
 

@@ -41,8 +41,8 @@
                 </div>
             @endif
             <div class="language-toggle">
-                <a href="#" class="text-sm">EN</a>
-                <a href="#" class="text-sm">LV</a>
+                <a href="" class="text-sm">EN</a>
+                <a href="" class="text-sm">LV</a>
             </div>
         </div>
     </div>
