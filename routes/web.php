@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\ProviderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TaskController;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,8 @@ Route::get('/dashboard', function () {
 
 Route::view('profile', 'profile')->name('profile');
 Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+
+Route::resource('tasks', TaskController::class);
 });
 
  
