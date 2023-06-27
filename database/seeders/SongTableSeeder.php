@@ -12,6 +12,7 @@ class SongTableSeeder extends Seeder
         Song::create([
             'title' => 'Song 1',
             'lyrics' => 'Lyrics for Song 1',
+            'release_date' => '2022-05-06',
             'musician_id' => 1,
         ]);
 
