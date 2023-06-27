@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('album');
             $table->date('release_date')->default(\Carbon\Carbon::today());
             $table->text('lyrics');
             $table->unsignedBigInteger('musician_id');

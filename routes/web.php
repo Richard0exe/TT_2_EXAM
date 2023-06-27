@@ -29,8 +29,16 @@ Route::get('/dashboard', function () {
 Route::view('profile', 'profile')->name('profile');
 Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
 
-Route::resource('tasks', TaskController::class);
 });
+
+use App\Http\Controllers\ProductController;
+
+  
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('products', ProductController::class);
+});
+
 
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
