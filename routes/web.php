@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\ProviderController;
+use App\Http\Controllers\ProfileController;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::group(['middleware'=>'auth'],function(){
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth','verified'])->name('dashboard');
+
+Route::view('profile', 'profile')->name('profile');
+Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+});
 
  
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
