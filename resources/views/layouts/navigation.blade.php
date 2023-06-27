@@ -59,11 +59,11 @@
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <div class="mr-4">
                     <a href="#" class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
-                        LV
+                        EN
                     </a>
                     <span class="text-gray-500">/</span>
                     <a href="#" class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
-                        EN
+                        LV
                     </a>
                 </div>
 
