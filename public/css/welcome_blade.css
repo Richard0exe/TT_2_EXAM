@@ -1,0 +1,74 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding-top: 60px; /* Add padding to body to accommodate the fixed navbar */
+}
+
+.navbar {
+    background-color: #e6ece6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Adjust height as needed */
+    display: flex;
+    justify-content: space-between; /* Add space between left and right sections */
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 999; /* Ensure the navbar stays on top */
+}
+
+.navbar .left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar .left-section .logo img {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+}
+
+.navbar .left-section .button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+}
+
+.navbar .right-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333; /* Adjust color as needed */
+}
+
+.navbar .language-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .language-toggle a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333; /* Adjust color as needed */
+}
+
+.navbar .left-section .search-box button {
+    padding: 5px 8px;
+    background-color: lightgreen;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+}
+
+.navbar .left-section .search-box input[type="text"] {
+    padding: 12px 16px; /* Adjust the top and bottom padding */
+    height: 4px; /* Adjust the height */
+}
