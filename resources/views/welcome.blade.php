@@ -24,32 +24,33 @@
                 <button type="submit"><i class="fas fa-search"></i></button>
             </div>
             <div class="buttons">
-                <a href="songs" class="button">All Songs</a>
-                <a href="/musicians" class="button">Artists</a>
+            <a href="songs" class="button">{{__('msg.All Songs')}}</a>
+
+                <a href="/musicians" class="button">{{__('msg.Artists')}}</a>
             </div>
         </div>
         <div class="right-section">
             @if (Route::has('login'))
                 <div>
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm">{{__('msg.Dashboard')}}</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm">{{__('msg.Log in')}}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm">{{__('msg.Register')}}</a>
                         @endif
                     @endauth
                 </div>
             @endif
             <div class="language-toggle">
-                <a href="#" class="text-sm">EN</a>
-                <a href="#" class="text-sm">LV</a>
+                <a href="language/en" class="text-sm">EN</a>
+                <a href="language/lv" class="text-sm">LV</a>
             </div>
         </div>
     </div>
     <div class="container">
-        <h2>Newest Song</h2>
+        <h2>{{__('msg.Newest Song')}}</h2>
         <table class="song-table">
             <tr>
                 <td>

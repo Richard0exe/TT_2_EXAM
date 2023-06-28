@@ -23,32 +23,32 @@
                 <button type="submit"><i class="fas fa-search"></i></button>
             </div>
             <div class="buttons">
-                <a href='songs' class="button">All Songs</a>
-                <a href="{{ route('musicians.index') }}" class="button">Artists</a>
+                <a href='songs' class="button">{{__('msg.All Songs')}}</a>
+                <a href="{{ route('musicians.index') }}" class="button">{{__('msg.Artists')}}</a>
             </div>
         </div>
         <div class="right-section">
             @if (Route::has('login'))
                 <div>
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm">{{__('msg.Dashboard')}}</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm">{{__('msg.Log in')}}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm">{{__('msg.Register')}}</a>
                         @endif
                     @endauth
                 </div>
             @endif
             <div class="language-toggle">
-                <a href="#" class="text-sm">EN</a>
-                <a href="#" class="text-sm">LV</a>
+                <a href="language/en" class="text-sm">EN</a>
+                <a href="language/lv" class="text-sm">LV</a>
             </div>
         </div>
     </div>
     <div class="list">
-        <h1 class="title">Songs List</h1>
+        <h1 class="title">{{__('msg.Songs List')}}</h1>
 
         @if (session('success'))
             <div class="alert alert-success">
@@ -68,7 +68,7 @@
                         <p class="mb-0">{{ $song->release_date }}</p>
                     </div>
                     @auth
-                    <a class="btn btn-info" href="{{ route('songs.show', $song->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('songs.show', $song->id) }}">{{__('msg.Show')}}</a>
         
                     @endauth
                 </li>

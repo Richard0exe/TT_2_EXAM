@@ -13,12 +13,12 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('msg.Dashboard') }}
                     </x-nav-link>
 
                     @if(auth()->user()->role === 'admin')
                         <x-nav-link :href="route('songs.index')" :active="request()->routeIs('songs.index')">
-                            {{ __('Create') }}
+                            {{ __('msg.Create') }}
                         </x-nav-link>
                     @endif
                 </div>
@@ -45,13 +45,13 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('profile')">
-                                {{ __('My Profile') }}
+                                {{ __('msg.My Profile') }}
                             </x-dropdown-link>
 
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('msg.Log Out') }}
                             </x-dropdown-link>
 
 
@@ -62,11 +62,11 @@
 
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
     <div class="mr-4">
-        <a href="#" class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
+        <a href="language/en" class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
             EN
         </a>
         <span class="text-gray-500">/</span>
-        <a href="#" class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
+        <a href="language/lv" class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
             LV
         </a>
     </div>

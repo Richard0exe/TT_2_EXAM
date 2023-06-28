@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('My Profile') }}
+            {{ __('msg.My Profile') }}
         </h2>
     </x-slot>
 
@@ -18,24 +18,24 @@
                         <div class="grid grid-cols-2 gap-6">
                             <div class="grid grid-rows-2 gap-6">
                                 <div>
-                                    <x-label for="name" :value="__('Name')" />
+                                    <x-label for="name" :value="__('msg.Name')" />
                                     <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ auth()->user()->name }}" autofocus />
                                 </div>
                                 <div>
-                                    <x-label for="email" :value="__('Email')" />
+                                    <x-label for="email" :value="__('msg.Email')" />
                                     <x-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{ auth()->user()->email }}" autofocus />
                                 </div>
                             </div>
                             <div class="grid grid-rows-2 gap-6">
                                 <div>
-                                    <x-label for="new_password" :value="__('New password')" />
+                                    <x-label for="new_password" :value="__('msg.New password')" />
                                     <x-input id="new_password" class="block mt-1 w-full"
                                              type="password"
                                              name="password"
                                              autocomplete="new-password" />
                                 </div>
                                 <div>
-                                    <x-label for="confirm_password" :value="__('Confirm password')" />
+                                    <x-label for="confirm_password" :value="__('msg.Confirm password')" />
                                     <x-input id="confirm_password" class="block mt-1 w-full"
                                              type="password"
                                              name="password_confirmation"
@@ -45,7 +45,7 @@
                         </div>
                         <div class="flex items-center justify-end mt-4">
                             <x-button class="ml-3">
-                                {{ __('Update') }}
+                                {{ __('msg.Update') }}
                             </x-button>
                         </div>
                     </form>
