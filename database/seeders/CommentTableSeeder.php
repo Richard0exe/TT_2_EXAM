@@ -3,19 +3,19 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Comments;
+use App\Models\Comment;
 
 class CommentTableSeeder extends Seeder
 {
     public function run()
     {
-        Comments::create([
+        Comment::create([
             'user_id' => 1,
             'song_id' => 1,
             'content' => 'Comment 1 for Song 1',
         ]);
 
-        Comments::create([
+        Comment::create([
             'user_id' => 2,
             'song_id' => 1,
             'content' => 'Comment 2 for Song 1',

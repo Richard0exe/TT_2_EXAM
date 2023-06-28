@@ -59,11 +59,6 @@
                     @foreach($song->comments as $comment)
                         <li>
                             <strong>{{ $comment->user->name }}:</strong> {{ $comment->content }}
-                            <form method="post" action="{{ route('comments.destroy', $comment->id) }}" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
                         </li>
                     @endforeach
                 </ul>

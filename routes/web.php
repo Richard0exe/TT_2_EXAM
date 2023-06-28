@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\ProviderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MusicianController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TaskController;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('songs', SongController::class);
 });
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 
 

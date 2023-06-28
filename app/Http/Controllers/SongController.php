@@ -67,9 +67,13 @@ class SongController extends Controller
     public function show($id)
 {
     $song = Song::find($id);
-    $header = "Show Song"; // Set the value of the $header variable
-
-    return view('songs.show', compact('song', 'header'));
+    
+    if (auth()->user()->role === 'admin') {
+        $header = "Show Song";
+        return view('songs.show', compact('song', 'header'));
+    } else {
+        return view('songs.show-view', compact('song'));
+    }
 }
 
     /**
