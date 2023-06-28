@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Auth\ProviderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MusicianController;
 use App\Http\Controllers\TaskController;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SongController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,12 +33,23 @@ Route::put('profile', [ProfileController::class, 'update'])->name('profile.updat
 
 });
 
-use App\Http\Controllers\ProductController;
+
+Route::middleware('auth')->group(function () {
+    Route::get('/musicians', [MusicianController::class, 'index'])->name('musicians.index');
+    Route::get('/musicians/create', [MusicianController::class, 'create'])->name('musicians.create');
+    Route::post('/store', [MusicianController::class, 'store'])->name('musicians.store');
+    Route::delete('/musicians/{id}', [MusicianController::class, 'destroy'])->name('musicians.destroy');
+    Route::get('/musicians/{id}/edit', [MusicianController::class, 'edit'])->name('musicians.edit');
+    Route::put('/musicians/{id}', [MusicianController::class, 'update'])->name('musicians.update');
+});
+
+
+
 
   
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('products', ProductController::class);
+    Route::resource('songs', SongController::class);
 });
 
 

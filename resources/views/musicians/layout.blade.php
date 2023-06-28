@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Laravel 8 CRUD Application - ItSolutionStuff.com</title>
+    <title>Songs</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 

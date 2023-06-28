@@ -14,8 +14,6 @@ return new class extends Migration
             $table->string('album');
             $table->date('release_date')->default(\Carbon\Carbon::today());
             $table->text('lyrics');
-            $table->unsignedBigInteger('musician_id');
-            $table->foreign('musician_id')->references('id')->on('musicians')->onDelete('cascade');
             $table->timestamps();
         });
     }

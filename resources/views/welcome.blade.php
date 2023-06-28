@@ -15,15 +15,17 @@
     <div class="navbar">
         <div class="left-section">
             <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <a href="/">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                </a>
             </div>
             <div class="search-box">
                 <input type="text" placeholder="Search">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </div>
             <div class="buttons">
-                <a href="#" class="button">All Songs</a>
-                <a href="#" class="button">Artists</a>
+                <a href="songs" class="button">All Songs</a>
+                <a href="/musicians" class="button">Artists</a>
             </div>
         </div>
         <div class="right-section">
@@ -41,10 +43,73 @@
                 </div>
             @endif
             <div class="language-toggle">
-                <a href="" class="text-sm">EN</a>
-                <a href="" class="text-sm">LV</a>
+                <a href="#" class="text-sm">EN</a>
+                <a href="#" class="text-sm">LV</a>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <h2>Top Songs</h2>
+        <table class="song-table">
+            <tr>
+                <td>
+                    <div class="song-item">
+                        <img src="{{ asset('images/donda.jpg') }}" alt="Song 1">
+                        <div class="song-details">
+                            <span class="song-title">Song 1</span>
+                            <span class="song-artist">Artist 1</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="song-item">
+                        <img src="{{ asset('images/donda.jpg') }}" alt="Song 2">
+                        <div class="song-details">
+                            <span class="song-title">Song 2</span>
+                            <span class="song-artist">Artist 2</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="song-item">
+                        <img src="{{ asset('images/donda.jpg') }}" alt="Song 3">
+                        <div class="song-details">
+                            <span class="song-title">Song 3</span>
+                            <span class="song-artist">Artist 3</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="song-item">
+                        <img src="{{ asset('images/donda.jpg') }}" alt="Song 4">
+                        <div class="song-details">
+                            <span class="song-title">Song 4</span>
+                            <span class="song-artist">Artist 4</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="song-item">
+                        <img src="{{ asset('images/donda.jpg') }}" alt="Song 5">
+                        <div class="song-details">
+                            <span class="song-title">Song 5</span>
+                            <span class="song-artist">Artist 5</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="song-item">
+                        <img src="{{ asset('images/donda.jpg') }}" alt="Song 6">
+                        <div class="song-details">
+                            <span class="song-title">Song 6</span>
+                            <span class="song-artist">Artist 6</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
